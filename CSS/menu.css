@@ -1,0 +1,58 @@
+*{
+    box-sizing: 0;
+    margin: 0;
+    background-color: #fff;
+}
+header{
+    padding-left: 5%;
+    font-size: 1.2em;
+    text-align: right;
+    padding-top: 10px;
+}
+
+a.a:hover{    
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+nav > div{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+header nav div a{
+    padding: 0px 10px;
+    text-decoration: none;
+}
+.islam{
+    color: white;
+}
+.lien_1{
+    margin-left: 5%;
+}
+.lien_2{
+    margin-left: 10%;
+    padding: 0px;
+}
+#ins{
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+#ins:hover{
+    color: black;
+    font-weight: bold;
+}
+#con{
+    background-color: white;
+    border-radius: 5px;
+}
+#con:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.conteneur h3{
+    text-align: center;
+}

@@ -1,0 +1,55 @@
+/* *{
+    margin: 0;
+    box-sizing: 0;
+}
+
+.line{
+    border-bottom: 2px solid black;
+}
+
+.conteneur{
+    border: 2px solid red;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 1200px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.commune{
+    border: 1px solid green;
+    text-align: left;
+    width: 500px;
+    height: 40vh;
+
+}
+
+h1{
+    text-align: center;
+    color: dodgerblue;
+}
+
+h2{
+    text-align: center;
+}
+
+h2:hover{
+    cursor: grab;
+    color: dodgerblue;
+}
+
+ul{
+    visibility: hidden;
+}
+
+ul li a{
+    text-decoration: none;
+    color:blue;
+    letter-spacing: 0.3rem;
+} */

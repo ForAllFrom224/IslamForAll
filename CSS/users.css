@@ -1,0 +1,79 @@
+.welcome{
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px dodgerblue;
+    text-emphasis: filled double-circle dodgerblue;
+}
+#name_user{
+    letter-spacing: 10px;
+    padding-left: 5px;
+}
+.forum2{
+    text-align: center;
+    color: dodgerblue;
+}
+.line{
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+.question{
+    width: 750px;
+    height: 50vh;
+    border: 1px solid green;
+    margin-left: 20%;
+}
+form{
+    margin: 10px;
+    margin-left: 20%;
+}
+.indication{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: dodgerblue;
+    font-weight: bold;
+}
+.col-4{
+    padding-bottom: 20px;
+}
+
+header{
+    padding-top: 10px;
+}
+
+a.a:hover{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.line{
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+textarea{
+    resize: none;
+}
+p.alerte{
+    border: 2px solid orange;
+    border-radius: 10px;
+    font-size: 1.1em;
+    text-align: center;
+    text-transform: capitalize;
+    font-style: oblique;
+    animation: 8s linear infinite alternate alerte;
+}
+@keyframes alerte {
+    from {
+      margin-left:0%;
+      width:70%;
+      color: dodgerblue;
+      
+    }
+  
+    to {
+      margin-left:100%;
+      width:70%;
+      color: red;
+    }
+  }

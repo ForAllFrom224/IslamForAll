@@ -73,7 +73,6 @@ form{
     text-align: left;
     width: 500px;
     height: 40vh;
-
 }
 
 h1{
@@ -95,3 +94,57 @@ ul li a{
     color:blue;
     letter-spacing: 0.3rem;
 }
+
+.conteneur-con{
+    padding-top: 10px;
+    margin-top: 10%;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 40vh;
+    background: linear-gradient(to right,red,yellow,green);
+}
+button[type="submit"]{
+    margin-left: 25%;
+    width: 50%;
+}
+
+button[type="submit"]:hover{
+    background-color: dodgerblue;
+    color: white;
+    opacity: 0.9;
+}
+
+.conteneur-ins{
+    padding-top: 20px;
+    margin-top: 5%;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 70vh;
+    background: linear-gradient(to left,red,yellow,green);
+}
+
+.annonce{
+    text-transform: capitalize;
+    animation: 2s infinite annonce;
+}
+
+@keyframes annonce {
+    0% {
+      letter-spacing: 1em;
+      transform: translateZ(400px);
+      opacity: 0;
+    }
+    40%{
+        color: dodgerblue;
+    }
+    70% {
+      opacity: 0.6;
+      color: red;
+    }
+    100% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }

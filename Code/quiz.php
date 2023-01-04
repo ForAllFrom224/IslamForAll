@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/commune.css?qsios">
+    <link rel="stylesheet" href="../CSS/commune.css?klsksll">
     <title>Document</title>
 </head>
 <body>
     <div class="line"></div>
-    <h1>Quizz</h1>
+    <h1 class="annonce">spécial quizz en islam</h1>
     <section class="quizz">
         <div class="question">
             <p></p>

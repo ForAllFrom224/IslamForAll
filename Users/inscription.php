@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/commune.css?dkljf">
+    <link rel="stylesheet" href="../CSS/commune.css?skjsj">
     <link rel="stylesheet" href="../CSS/menu.css">
     <title>Document</title>
 </head>
@@ -41,7 +41,7 @@
             echo "<div class='alerte lesDeux'>Veuillez remplir tous les champs pour une bonne inscription</div>";
         }
     ?>
-    <div class="container conteneur">
+    <div class="container conteneur-ins">
         <form action="" method="post">
             <div class="mb-2">
                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom...">
@@ -59,7 +59,7 @@
                 <input type="password" class="form-control" name="mdp2" id="mdp_confirm" placeholder="Confirmation du mot de pass...">
             </div>
             <div>
-                <button type="submit" class="btn btn-primary" id="inscription">s'inscrire</button>
+                <button type="submit" class="btn btn-primary" id="inscription">s'inscrire</button><br>
                 Vous avez déjà un compte : <a href="connexion.php">Connectez-vous</a>                
             </div>
         </form>

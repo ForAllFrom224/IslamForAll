@@ -5,7 +5,7 @@
 }
 header{
     padding-left: 5%;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: right;
     padding-top: 10px;
 }
@@ -26,7 +26,7 @@ header nav div a{
     text-decoration: none;
 }
 .islam{
-    color: white;
+    color: orange;
 }
 .lien_1{
     margin-left: 5%;
@@ -55,4 +55,44 @@ header nav div a{
 
 .conteneur h3{
     text-align: center;
+}
+
+a i{
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .a{
+      display: none;
+    }
+    .annonce{
+      font-size: 2em;
+    }
+
+    .islam a{
+        color: orange;
+    }
+    a i{
+      display: block;
+    }
+
+    .authentification{
+        display: none;
+    }
+
+
+    @keyframes annonce {
+      0% {
+        letter-spacing: 3px;
+        transform: translateZ(400px);
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateZ(0);
+        opacity: 1;
+      }
+    }
 }

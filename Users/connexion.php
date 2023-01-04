@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/commune.css?lkjs">
+    <link rel="stylesheet" href="../CSS/commune.css?s">
     <link rel="stylesheet" href="../CSS/menu.css">
     <title>Document</title>
     <script src="../JS/validation.js"></script>
@@ -55,7 +55,7 @@
             }
         }
     ?>
-    <div class="container conteneur">
+    <div class="container conteneur-con">
         <form action="" method="post">
             <div class="mb-2">
                 <input type="email"  class="form-control" name="email" id="email" placeholder="Votre email...">
@@ -64,7 +64,7 @@
                 <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Votre mot de pass...">
             </div>
             <div>
-                <button type="submit" class="btn btn-primary mb-1" id="connexion">se connecter</button>
+                <button type="submit" class="btn btn-primary mb-1" id="connexion">se connecter</button><br>
                 Vous n'avez pas de compte : <a href="inscription.php">Inscrivez-vous</a>
             </div>
         </form>

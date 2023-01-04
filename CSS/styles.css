@@ -1,8 +1,75 @@
 header{
     padding-top: 10px;
+}  
+
+.conteneur img.the-hidden{
+    display: none;
 }
 
-a:hover{
-    border: 1px solid black;
+.conteneur img{
+    width: 90%;
+    height: 77vh;
+    border: 1px solid white;
     border-radius: 10px;
+    padding-left: 10%;
+}
+
+label{
+    font-weight: bold;
+}
+
+.annonce{
+    animation: 2s infinite annonce;
+}
+
+@keyframes annonce {
+    0% {
+      letter-spacing: 1em;
+      transform: translateZ(400px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+
+  a i{
+    color: black;
+    display: none;
+  }
+
+@media screen and (max-width: 900px) {
+    .a{
+      display: none;
+    }
+    .annonce{
+      font-size: 2em;
+    }
+    a i{
+      display: block;
+    }
+
+    a:hover{
+      color: dodgerblue;
+    }
+  
+
+    @keyframes annonce {
+      0% {
+        letter-spacing: 3px;
+        transform: translateZ(400px);
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateZ(0);
+        opacity: 1;
+      }
+    }
 }

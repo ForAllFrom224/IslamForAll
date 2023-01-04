@@ -70,10 +70,66 @@ p.alerte{
       color: dodgerblue;
       
     }
-  
     to {
       margin-left:100%;
       width:70%;
       color: red;
     }
   }
+  .lesDeux{	
+	width: 70%;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	border-radius: 10px;
+    font-size: 1.3em;
+    text-align: center;
+    
+}
+
+.bad{
+    /* visibility: hidden; */
+    border: 2px solid red;
+}
+
+.good{
+    border: 2px solid green;
+}
+.alerte{
+    border: 2px solid orange;
+}
+/* .lienQuestion{
+    color: dodgerblue;
+    visibility: visible;
+} */
+.buttonTest{
+    width: 220px;
+    
+}
+.rep{
+    width: 50%;
+    border: 1px solid gray;
+}
+.rep p.p{
+    font-size: 1.2em;
+    text-align: center;
+    width: 400px;
+}
+.rep p.ques-forum{
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    border: 1px solid white;
+    width: 100%;
+    background-color: gray;
+}
+.rep p.rep-forum{
+    font-family: 'Times New Roman', Times, serif;
+}
+.span{
+    font-size: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+span.temps{
+    color: dodgerblue;
+    font-weight: bold;
+}

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/commune.css?kslkksk">
+    <link rel="stylesheet" href="../CSS/commune.css?kslkks">
     <title>Document</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
     <h1>Livre</h1>
 
     <section>
-    <div class="flex">
+        <div class="flex">
             <div id="ange" class="anges commune">
                 <h2>ANGES</h2>
                 <ul>

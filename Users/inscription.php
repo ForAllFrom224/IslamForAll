@@ -1,3 +1,6 @@
+<?php
+    include("../Private/conDB.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,20 +28,21 @@
 			</div>
 		</nav>
 	</header> 
-    <?php
-    include("../Private/conDB.php");
-
-        if((isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp1']) && isset($_POST['mdp2'])) &&
-        (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['mdp1']) && !empty($_POST['mdp2']))){
-            if($_POST['mdp1'] == $_POST['mdp2']){
-                $rq = $bd->prepare("INSERT INTO users(nom,prenom,email,mot_de_pass) VALUES (?,?,?,?)");
-                $rq->execute(array($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp1']));
-                header("Location: ./connexion.php");
+    <div class="line"></div>
+    <?php 
+        if(isset($_POST['valider'])){
+            if((isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp1']) && isset($_POST['mdp2'])) &&
+            (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['mdp1']) && !empty($_POST['mdp2']))){
+                if($_POST['mdp1'] == $_POST['mdp2']){
+                    $rq = $bd->prepare("INSERT INTO users(nom,prenom,email,mot_de_pass) VALUES (?,?,?,?)");
+                    $rq->execute(array($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp1']));
+                    header("Location: ./connexion.php");
+                }else{
+                    echo "<div class='alerte lesDeux'>Les deux mot de pass ne correspondent pas</div>";
+                }
             }else{
-                echo "<div class='alerte lesDeux'>Les deux mot de pass ne correspondent pas</div>";
+                echo "<div class='alerte lesDeux'>Veuillez remplir tous les champs pour une bonne inscription</div>";
             }
-        }else{
-            echo "<div class='alerte lesDeux'>Veuillez remplir tous les champs pour une bonne inscription</div>";
         }
     ?>
     <div class="container conteneur-ins">
@@ -59,7 +63,7 @@
                 <input type="password" class="form-control" name="mdp2" id="mdp_confirm" placeholder="Confirmation du mot de pass...">
             </div>
             <div>
-                <button type="submit" class="btn btn-primary" id="inscription">s'inscrire</button><br>
+                <button type="submit" class="btn btn-primary" id="inscription" name="valider">s'inscrire</button><br>
                 Vous avez déjà un compte : <a href="connexion.php">Connectez-vous</a>                
             </div>
         </form>

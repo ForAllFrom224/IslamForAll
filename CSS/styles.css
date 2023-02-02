@@ -2,6 +2,11 @@ header{
     padding-top: 10px;
 }  
 
+.islam{
+  color: orange;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .conteneur img.the-hidden{
     display: none;
 }
@@ -42,20 +47,40 @@ label{
     display: none;
   }
 
-@media screen and (max-width: 900px) {
-    .a{
-      display: none;
-    }
-    .annonce{
-      font-size: 2em;
-    }
-    a i{
-      display: block;
-    }
+  input.radio{
+    width: 20px;
+  }
 
-    a:hover{
-      color: dodgerblue;
-    }
+  .is-visible{
+    transform: translate(10px,10px);
+    transition: 2s cubic-bezier(.5,0,0,1);
+    color: black;   
+    font-size: 1.1em;
+    transition: 2s;
+  }
+
+@media screen and (max-width: 480px) {
+  body{
+    min-width: 320px;
+  }
+
+  .a{
+    display: block;
+  }
+  a{
+    margin-top: 3px;
+    font-size: 10Px;
+  }
+  .annonce{
+    font-size: 2em;
+  }
+  a i{
+    display: none;
+  }
+
+  a:hover{
+    color: dodgerblue;
+  }
   
 
     @keyframes annonce {

@@ -12,7 +12,7 @@ header{
 
 a.a:hover{    
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 nav > div{
@@ -24,9 +24,12 @@ nav > div{
 header nav div a{
     padding: 0px 10px;
     text-decoration: none;
+    color: dodgerblue;
 }
-.islam{
+.islam a{
     color: orange;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .lien_1{
     margin-left: 5%;

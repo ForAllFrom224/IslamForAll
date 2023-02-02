@@ -1,27 +1,145 @@
-a{
-    font-size: 1.1em;
+html{
+    --my-bleue : dodgerblue;
+    --bleue : blue;
+    --vert : green;
+    --rouge : red;
+    --orange : orange;
+    --noire : black;
+    --blanc : white;
+    --whitesmoke : whitesmoke;
 }
 
-h1{
-    text-align: center;
-    color: dodgerblue;
-    text-transform: uppercase;
+/* definition du css pour le menu ( fichier entete inclu dans les autres) */
+header{
+    padding-left: 5%;
+    font-size: 1.1em;
+    text-align: right;
+    padding-top: 10px;
 }
+
+a.a:hover{    
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+nav > div{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+header nav div a{
+    padding: 0px 10px;
+    text-decoration: none;
+}
+.islam a{
+    color: orange;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.lien_1{
+    margin-left: 5%;
+}
+.lien_2{
+    margin-left: 10%;
+    padding: 0px;
+}
+#ins{
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+#ins:hover{
+    color: black;
+    font-weight: bold;
+}
+#con{
+    background-color: white;
+    border-radius: 5px;
+}
+#con:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.conteneur h3{
+    text-align: center;
+}
+
+a i{
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .a{
+      display: none;
+    }
+    .annonce{
+      font-size: 2em;
+    }
+
+    .islam a{
+        color: orange;
+    }
+    a i{
+      display: block;
+    }
+
+    .authentification{
+        display: none;
+    }
+
+
+    @keyframes annonce {
+      0% {
+        letter-spacing: 3px;
+        transform: translateZ(400px);
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateZ(0);
+        opacity: 1;
+      }
+    }
+}
+
+
+
 #good{
     visibility: hidden;
 }
 
-/* .conteneur{
-    width: 550px;
-    height: 50vh;
-    border: 2px solid black;
-    margin-top: 20px;
-    border-radius: 10px;
-
-} */
-
 form{
     margin-top: 20px;
+}
+
+/* definiton du css commune des differents fichiers */
+.bad{
+    /* visibility: hidden; */
+    border: 2px solid var(--rouge);
+}
+.good{
+    border: 2px solid var(--vert);
+}
+.line{
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 10px;
+}
+a{
+    font-size: 1.1em;
+}
+h1{
+    text-align: center;
+    color: var(--my-blue);
+    text-transform: uppercase;
+}
+
+h1{
+    text-align: center;
+    color: var(--my-bleue);
 }
 
 .lesDeux{	
@@ -34,16 +152,78 @@ form{
     
 }
 
-.bad{
-    /* visibility: hidden; */
-    border: 2px solid red;
+/* la definition du css de la partie livre */
+table.table{
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+table.table thead tr th{
+    text-align: center;
+}
+.download{
+    background: none;
+    color: var(--my-bleue);
+    font-size: 1.2em;
 }
 
-.good{
-    border: 2px solid green;
+/* definiton du css de la partie forum1 */
+div.forum1{
+    width: 100%;
+}
+.forum1 .question-forum1{
+    width: 80%;
+    border: 1px solid var(--black);
+    background-color: #111;
+    margin-top: 10px;
+    margin-left: 10%;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+.question-forum1 a{
+    text-decoration: none;
+    font-size: 1.1em;
+    background-color: var(--white);
+    color: var(--my-bleue);
+    font-weight: 400;
+}
+.question-forum1 a:hover{
+    cursor: grab;
+}
+.question-forum1 span{
+    background-color: #111;
+    color: var(--blanc);
+
+} 
+p.alerte{
+    border: 2px solid var(--orange);
+    border-radius: 10px;
+    font-size: 1.1em;
+    text-align: center;
+    text-transform: capitalize;
+    font-style: oblique;
+    animation: 3s linear infinite alternate alerte;
+}
+@keyframes alerte {
+    from {
+      margin-left:10%;
+      width:70%;
+      color: var(--my-bleue);
+      
+    }
+    to {
+      margin-left:30%;
+      width:70%;
+      color: var(--rouge);
+    }
 }
 .alerte{
-    border: 2px solid orange;
+    border: 2px solid var(--orange);
+}
+.islam{
+    color: var(--orange);
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .question{
@@ -51,11 +231,12 @@ form{
     margin-top: 10px;
 }
 
-
-.line{
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
+.question-forum1:hover{
+    opacity: 0.8;
+    transition: .2s;
 }
+
+/* definiton du css de la partie histoire */
 
 .flex{
     display: flex;
@@ -68,83 +249,107 @@ form{
     margin: 20px 10px;
 }
 
+ul{
+    visibility: visible;
+}
+
+ul li a{
+    text-decoration: none;
+    color:var(--bleue);
+    letter-spacing: 0.3rem;
+}
+
 .commune{
-    border: 1px solid green;
+    border: 1px solid var(--vert);
     text-align: left;
     width: 500px;
     height: 40vh;
 }
 
-h1{
-    text-align: center;
-    color: dodgerblue;
-}
-
 h2:hover{
     cursor: grab;
-    color: dodgerblue;
+    color: var(--my-bleue);
 }
-
-ul{
-    visibility: hidden;
-}
-
-ul li a{
-    text-decoration: none;
-    color:blue;
-    letter-spacing: 0.3rem;
-}
-
+/* gestion css du fichier connexion */
 .conteneur-con{
     padding-top: 10px;
     margin-top: 10%;
-    border: 2px solid black;
+    border: 2px solid var(--black);
     border-radius: 10px;
     width: 500px;
     height: 40vh;
-    background: linear-gradient(to right,red,yellow,green);
+    background: linear-gradient(to right,white,dodgerblue,white);
 }
+
+/* gestion commune fichier connexion et inscription */
 button[type="submit"]{
     margin-left: 25%;
     width: 50%;
 }
 
 button[type="submit"]:hover{
-    background-color: dodgerblue;
-    color: white;
+    background-color: var(--my-bleue);
+    color: var(--blanc);
     opacity: 0.9;
 }
-
+/* gestion css du fichier inscription */
 .conteneur-ins{
     padding-top: 20px;
     margin-top: 5%;
-    border: 2px solid black;
+    border: 2px solid var(--black);
     border-radius: 10px;
     width: 500px;
     height: 70vh;
-    background: linear-gradient(to left,red,yellow,green);
+    background: linear-gradient(to left,dodgerblue,white,dodgerblue);
 }
 
+/* definiton du css pour le fichier index et quizz */
 .annonce{
     text-transform: capitalize;
-    animation: 2s infinite annonce;
+    animation: 3s infinite annonce;
 }
-
 @keyframes annonce {
     0% {
-      letter-spacing: 1em;
+      letter-spacing: 20px;
       transform: translateZ(400px);
+      color: var(--vert);
       opacity: 0;
     }
     40%{
-        color: dodgerblue;
+        color: var(--my-bleue);
     }
     70% {
       opacity: 0.6;
-      color: red;
+      color: var(--rouge);
     }
     100% {
       transform: translateZ(0);
       opacity: 1;
     }
   }
+
+
+@media screen and (max-width: 900px) {
+    .flex{
+        flex-direction: column;
+        width: 350px;
+    }
+}
+
+/* definition du css pour la partie du quizz */
+div.quizz{
+    background-color: #111;
+    color: var(--my-bleue);
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+div.quizz:hover{
+    opacity: .9;
+    transition: 1s;
+    color: var(--blanc);
+    font-weight: bold;
+    cursor: grab;
+}

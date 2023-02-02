@@ -16,16 +16,16 @@ CREATE TABLE questions(
     id int primary key auto_increment,
     question varchar(500),
     date_demande DATETIME DEFAULT CURRENT_TIMESTAMP(),
-    id_user int,
+    id_user int NULL,
     FOREIGN KEY (id_user) REFERENCES users(id)
 );
 
 CREATE TABLE answers(
     id int primary key auto_increment,
-    id_question int,
+    id_question int NULL,
     reponse text(10000),
     date_reponse DATETIME DEFAULT  CURRENT_TIMESTAMP(),
-    id_user int,
+    id_user int NULL,
     FOREIGN KEY (id_question) REFERENCES  questions(id),
     FOREIGN KEY (id_user) REFERENCES users(id)
 );

@@ -1,6 +1,6 @@
 <?php
-    include('menu.html');
-    $element = scandir("../DOCS"); //retourne un tableau contenant le contenu du dossier    
+    include('menu_user.html');
+    $element = scandir("../DOCS/"); //retourne un tableau contenant le contenu du dossier
 ?>
 
 <!DOCTYPE html>
@@ -10,12 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?">
-    <link rel="stylesheet" href="../CSS/commune.css?sk">
+    <link rel="stylesheet" href="../CSS/users.css?kd">
     <title>Document</title>
 </head>
 <body>
-    <div class="line"></div>
-    <h1>Livre</h1>
+    <h1>la lecture est la nourriture de l'esprit, lisez donc... bonne lecture</h1>
 
     <section>
         <center>
@@ -27,12 +26,18 @@
                 </tr>                
             </thead>
             <tbody>
+                <!-- <?php foreach($element as $fichier) {?>
+                    <tr>
+                        <td><?php $contenu = explode(".",$fichier); echo $contenu[0]; ?></td>
+                        <td><a href="<?php echo "../DOCS/".$fichier;?>" class="download"><?php if($fichier != "." && $fichier != ".." && $fichier != ".htaccess") echo $fichier;?></td></a>
+                    </tr>
+                <?php } ?>            -->
                 <?php for($i = 3; $i < count($element); $i++) {?>
                     <tr>
                         <td><?php $contenu = explode(".",$element[$i]); echo $contenu[0];?></td>
                         <td><a href="<?php echo "../DOCS/".$element[$i];?>" class="download"><?php echo $element[$i];?></td></a>
                     </tr>
-                <?php } ?>        
+                <?php } ?> 
             </tbody>
         </table>
         </center>

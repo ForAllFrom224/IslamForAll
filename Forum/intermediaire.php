@@ -1,19 +1,15 @@
 <?php
     session_start();
-    include("../Private/conDB.php");
 
     $id= $_SESSION['idUser'];
-   if(isset($_POST['lien']) && !empty($_POST['lien'])){
-        // $question = $_POST['lien'];
-        // $reqQues = $bd->prepare("SELECT question FROM questions WHERE id = ? ");
-        // $reqQues->execute(array($question));
+   if(isset($_GET['lien']) && !empty($_GET['lien'])){
+        $_SESSION['lien'] = $_GET['lien'];
 
-        // $reqRep = $bd->prepare("SELECT reponse FROM answers WHERE id_question = ? ");
-        // $reqRep->execute(array($question));
+        header("Location: ./reponse.php");
+   }
 
-        // $_SESSION['questions'] = $reqQues;
-        // $_SESSION['reponses'] =  $reqRep;
-        $_SESSION['lien'] = $_POST['lien'];
+   if(isset($_GET['l']) && !empty($_GET['l'])){
+          $_SESSION['lien'] = $_GET['l'];
 
         header("Location: ./reponse.php");
    }

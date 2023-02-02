@@ -1,14 +1,58 @@
+html{
+    --my-blue : dodgerblue;
+    --black : black;
+    --blanc : white;
+    --mode-sombre : #111;
+}
+/* pour la gestion de la page home et du menu_user */
+a{
+    margin: 1px;
+}
+.nav-item .nav-link.home{
+    color: var(--my-blue);
+}
+.nav-item .nav-link.home:hover{
+    background-color: var(--mode-sombre);
+    color: dodgerblue;
+    border: 1px solid var(--mode-sombre);
+    border-radius: 10px;
+    transition: 1.5s;
+}
+a.deconnexion{
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
+    border-radius: 10px;
+    color: black;
+    margin-right: 10px;
+    font-weight: bold;
+}
+a.deconnexion:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    transition: 1.5s;
+    opacity: .7s;
+}
 .welcome{
     text-align: center;
     color: black;
     text-decoration: underline;
     text-shadow: 1px 1px 1px dodgerblue;
-    text-emphasis: filled double-circle dodgerblue;
+    text-emphasis: filled double-circle var(--my-blue);
 }
 #name_user{
     letter-spacing: 10px;
     padding-left: 5px;
 }
+div.form-fichier{
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 50%;
+    font-weight: bold;
+    color: black;
+}
+
+
 .forum2{
     text-align: center;
     color: dodgerblue;
@@ -17,11 +61,16 @@
     border-bottom: 2px solid black;
     padding-bottom: 10px;
 }
-.question{
+.pose-question{
     width: 750px;
     height: 50vh;
     border: 1px solid green;
     margin-left: 20%;
+}
+div.pose-question span{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: dodgerblue;
 }
 form{
     margin: 10px;
@@ -54,29 +103,8 @@ a.a:hover{
 textarea{
     resize: none;
 }
-p.alerte{
-    border: 2px solid orange;
-    border-radius: 10px;
-    font-size: 1.1em;
-    text-align: center;
-    text-transform: capitalize;
-    font-style: oblique;
-    animation: 8s linear infinite alternate alerte;
-}
-@keyframes alerte {
-    from {
-      margin-left:0%;
-      width:70%;
-      color: dodgerblue;
-      
-    }
-    to {
-      margin-left:100%;
-      width:70%;
-      color: red;
-    }
-  }
-  .lesDeux{	
+
+.lesDeux{	
 	width: 70%;
 	padding: 10px 10px;
 	margin: 10px 10px;
@@ -101,29 +129,50 @@ p.alerte{
     color: dodgerblue;
     visibility: visible;
 } */
-.buttonTest{
-    width: 220px;
-    
+
+/* Pour la gestion de la page du forum 2 */
+
+.forum2{
+    width: 90%;
+
 }
+
+.question-forum2 a{
+    width: auto;
+    text-decoration: none;
+}
+.buttonTest{
+    width: 100%;
+    border-radius: 10px;   
+}
+.buttonTest:hover{
+    opacity: .8;
+    color: dodgerblue;
+}
+.buttonTest a:hover{
+    font-weight: bold;
+}
+
+/* pour la gestion des reponses de commentaires du forum 2*/
 .rep{
-    width: 50%;
-    border: 1px solid gray;
+    width: 100%;
 }
 .rep p.p{
     font-size: 1.2em;
     text-align: center;
-    width: 400px;
 }
 .rep p.ques-forum{
     font-weight: bold;
     font-size: 1.5em;
     text-align: center;
     border: 1px solid white;
-    width: 100%;
     background-color: gray;
+    width: 50%;
 }
 .rep p.rep-forum{
     font-family: 'Times New Roman', Times, serif;
+    width: 50%;
+    text-align: left;
 }
 .span{
     font-size: 10px;
@@ -132,4 +181,88 @@ p.alerte{
 span.temps{
     color: dodgerblue;
     font-weight: bold;
+}
+
+/* La partie My questions */
+.question-display{
+    width: 100%;
+    height: auto;
+}
+.question-display div.question{
+    width: 50%;
+    background-color: gray;
+    font-weight: bold;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 2%;
+}
+
+.question-display span.time{
+    color: red;
+}
+
+/* definition du css de la partie lire un livre */
+h1{
+    font-size: 1.3em;
+    text-align: center;
+    color: dodgerblue;
+    text-transform: uppercase;
+}
+table.table{
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+table.table thead tr th{
+    text-align: center;
+}
+.download{
+    background: none;
+    color: dodgerblue;
+    font-size: 1.2em;
+}
+
+/* gestion de la partie answers */
+.my-answers{
+    border: 1px solid black;
+    width: 100%;
+}
+.my-answers div.question-repondu{
+    width: 50%;
+    font-weight: bold;
+    background-color: gray;
+    color: black;
+    opacity: 0.8;
+}
+.my-answers div.question-repondu span{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: normal;
+}
+
+/* gestion de la pagination pour les deux forums */
+.pagination{
+    width: 100%;
+    margin-top: 5px;
+    justify-content: center;
+}
+.pagination a{
+    text-decoration: none;
+    color: black;
+    width: 30px;
+    border-radius: 10px;
+}
+.pagination a:hover{
+    opacity: 0.7;
+    font-weight: bold;
+}
+.pagination a.page_nonclique{
+    border: 1px solid dodgerblue;
+}
+.pagination a.page_clique{
+    background-color: green;
+    border: 1px solid green;
+}
+.pagination a.page_clique:hover{
+    color: black;
 }

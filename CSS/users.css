@@ -5,6 +5,10 @@ html{
     --mode-sombre : #111;
 }
 /* pour la gestion de la page home et du menu_user */
+.home-page{
+    border: 1px solid gray;
+    border-radius: 15px;
+}
 a{
     margin: 1px;
 }
@@ -16,7 +20,7 @@ a{
     color: dodgerblue;
     border: 1px solid var(--mode-sombre);
     border-radius: 10px;
-    transition: 1.5s;
+    transition: 2s;
 }
 a.deconnexion{
     border: 1px solid dodgerblue;
@@ -33,6 +37,10 @@ a.deconnexion:hover{
     transition: 1.5s;
     opacity: .7s;
 }
+/* definition du css pour le menu_user */
+/* header.header{
+    background-color: #000;
+} */
 .welcome{
     text-align: center;
     color: black;
@@ -52,7 +60,7 @@ div.form-fichier{
     color: black;
 }
 
-
+/* definition du css pour le forum 2 */
 .forum2{
     text-align: center;
     color: dodgerblue;
@@ -223,10 +231,10 @@ table.table thead tr th{
 }
 
 /* gestion de la partie answers */
-.my-answers{
+/* .my-answers{
     border: 1px solid black;
     width: 100%;
-}
+} */
 .my-answers div.question-repondu{
     width: 50%;
     font-weight: bold;

@@ -12,21 +12,27 @@ CREATE TABLE users(
     date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP()
 );
 
+-- CREATE TABLE forums(
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     titre VARCHAR(100),
+--     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP()
+-- );
+
 CREATE TABLE questions(
     id int primary key auto_increment,
     question varchar(500),
     date_demande DATETIME DEFAULT CURRENT_TIMESTAMP(),
-    id_user int NULL,
-    FOREIGN KEY (id_user) REFERENCES users(id)
+    id_user int,
+    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE SET NULL
 );
 
 CREATE TABLE answers(
     id int primary key auto_increment,
-    id_question int NULL,
+    id_question int,
     reponse text(10000),
     date_reponse DATETIME DEFAULT  CURRENT_TIMESTAMP(),
-    id_user int NULL,
-    FOREIGN KEY (id_question) REFERENCES  questions(id),
-    FOREIGN KEY (id_user) REFERENCES users(id)
+    id_user int,
+    FOREIGN KEY (id_question) REFERENCES  questions(id) ON DELETE SET NULL,
+    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE SET NULL
 );
 

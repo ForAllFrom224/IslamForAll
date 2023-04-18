@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?jhds">
-    <link rel="stylesheet" href="../CSS/users.css?ss">
+    <link rel="stylesheet" href="../css/users.css?ss">
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link home-page" href="../index.html">Home Page</a>
@@ -35,7 +35,8 @@
             </li>
         </ul> 
         <hr>       
-	</header>
+	</header> -->
+    <?php include("menu_user.html"); ?>
     <h1 class="welcome">BIENVENUE <span id="name_user"><?php echo $_SESSION['lastname']." ".$_SESSION['firstname']; ?></h1></span>
     <?php
         if(isset($_POST['valider'])){
@@ -45,10 +46,10 @@
                 $type = $_FILES['fichier']['type'];
                 $taille = $_FILES['fichier']['size'];
                 
-                $etat = move_uploaded_file($chemin,"../DOCS/".$nom_file); // on deplace le fichier vers le dossiers DOCS
+                $etat = move_uploaded_file($chemin,"../tmp/".$nom_file); // on deplace le fichier vers le dossiers tmp
 
                 if($etat){
-                    chmod("../DOCS/".$nom_file,0700); //mofifier les droits du fichier le 0 pour octal
+                    chmod("../tmp/".$nom_file,0700); //mofifier les droits du fichier le 0 pour octal
                     echo "effectue avec succes";
                 }else 
                     echo "pas reussi";

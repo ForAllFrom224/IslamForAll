@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/commune.css?skjsk">
-    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../css/commune.css?skjsk">
+    <link rel="stylesheet" href="../css/menu.css">
     <title>Document</title>
     <script src="../JS/validation.js"></script>
 </head>
@@ -51,7 +51,7 @@
 
                 // pour eviter l'execution du javaScript dans la boucle au cas où la condition de son exec sera valide
                 if($variable == 1)
-                    header("Location: ../Forum/home.php"); 
+                    header("Location: home.php"); 
                 else{
                 // echo "<script>alert('NADA')</script>";
                     echo "<div class='bad lesDeux'>Une erreure avec le mot de pass ou l'adresse email</div>";

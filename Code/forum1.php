@@ -29,13 +29,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../CSS/menu.css?sfgi">
-	<link rel="stylesheet" href="../CSS/commune.css?skskskjs">
-	<link rel="stylesheet" href="../CSS/users.css?jdq">
+	<link rel="stylesheet" href="../css/menu.css?sfgi">
+	<link rel="stylesheet" href="../css/commune.css?skskskjs">
+	<link rel="stylesheet" href="../css/users.css?jdq">
     <title>Document</title>
 </head>
 <body>
-	<header>
+	<!-- <header>
 		<nav>
 			<div>
 				<div class="islam">ISLAM POUR TOUS</div>
@@ -53,7 +53,8 @@
 				</div>
 			</div>
 		</nav>
-	</header>
+	</header> -->
+	<?php include("menu.html") ?>
 	<div class="line"></div>
     <h1>Forum</h1>
 	<p class="alerte container limite-animation">Pour poser ou repondre à une question vous devez vous inscrire ou vous connecter</p>

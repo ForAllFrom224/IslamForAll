@@ -9,7 +9,8 @@ CREATE TABLE users(
     prenom varchar(50),
     email varchar(50) not null,
     mot_de_pass varchar(50),
-    date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP()
+    date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP(),
+    is_active BOOLEAN NOT NULL DEFAULT 1
 );
 
 CREATE TABLE forums(
@@ -23,7 +24,8 @@ CREATE TABLE questions(
     question varchar(500),
     date_demande DATETIME DEFAULT CURRENT_TIMESTAMP(),
     id_user INT,
-    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE SET NULL
+    is_delete_ques BOOLEAN NOT NULL DEFAULT 0,
+    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE answers(
@@ -32,8 +34,9 @@ CREATE TABLE answers(
     reponse TEXT(10000),
     date_reponse DATETIME DEFAULT  CURRENT_TIMESTAMP(),
     id_user INT,
-    FOREIGN KEY (id_question) REFERENCES  questions(id) ON DELETE SET NULL,
-    FOREIGN KEY (id_user) REFERENCES users(id)
+    is_delete_rep BOOLEAN NOT NULL DEFAULT 0,
+    FOREIGN KEY (id_question) REFERENCES  questions(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- DROP DATABASE IF EXISTS islampourtous ;

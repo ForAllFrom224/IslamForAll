@@ -4,6 +4,10 @@ html{
     --blanc : white;
     --mode-sombre : #111;
 }
+
+body{
+    background-color: whitesmoke;
+}
 /* pour la gestion de la page home et du menu_user */
 .home-page{
     border: 1px solid gray;
@@ -64,16 +68,17 @@ div.form-fichier{
 .forum2{
     text-align: center;
     color: dodgerblue;
+    font-weight: bold;
+    font-size: large;
 }
-.line{
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
-}
+
 .pose-question{
     width: 750px;
-    height: 50vh;
-    border: 1px solid green;
+    height: 50vh;    
     margin-left: 20%;
+}
+div.pose-question button[type='submit']{
+    margin-left: 25%;
 }
 div.pose-question span{
     font-size: 1.5em;
@@ -98,10 +103,7 @@ header{
     padding-top: 10px;
 }
 
-a.a:hover{
-    border: 1px solid black;
-    border-radius: 10px;
-}
+
 
 .line{
     border-bottom: 2px solid black;
@@ -145,21 +147,20 @@ textarea{
 
 }
 
-.question-forum2 a{
-    width: auto;
+.question-forum2 a.aquestion{    
     text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 .buttonTest{
-    width: 100%;
+    width: 80%;
     border-radius: 10px;   
 }
 .buttonTest:hover{
     opacity: .8;
     color: dodgerblue;
 }
-.buttonTest a:hover{
-    font-weight: bold;
-}
+
 
 /* pour la gestion des reponses de commentaires du forum 2*/
 .rep{
@@ -273,4 +274,11 @@ table.table thead tr th{
 }
 .pagination a.page_clique:hover{
     color: black;
+}
+
+.action_user{
+    color: red;
+}
+.info{
+    color: dodgerblue;
 }

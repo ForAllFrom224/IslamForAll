@@ -32,48 +32,48 @@
             // $reste = $total - $q;
             // $question = $total - $reste;                       
 
-            if(isset($_POST['reponse']) && !empty($_POST['reponse'])){                                     
-                $requete = $bd->prepare("INSERT INTO answers(id_question,reponse,id_user) values(?,?,?)");
-                $requete->execute(array($question,$_POST['reponse'],$id));
-            }else{
-                echo "<div class='alerte lesDeux'>Veuillez repondre d'abord avant de passer à la publication</div>";
+            if(isset($_POST['rep'])){
+                if(isset($_POST['reponse']) && !empty($_POST['reponse'])){                                     
+                    $requete = $bd->prepare("INSERT INTO answers(id_question,reponse,id_user) values(?,?,?)");
+                    $requete->execute(array($question,$_POST['reponse'],$id));
+                }else{
+                    echo "<div class='alerte lesDeux'>Veuillez repondre d'abord avant de passer à la publication</div>";
+                }
             }
             
-            $reqQues = $bd->prepare("SELECT question FROM questions WHERE id = ? ");
+            $reqQues = $bd->prepare("SELECT question FROM questions WHERE id = ? AND is_delete_ques = 0");
             $reqQues->execute(array($question));
             
             $req = $bd->prepare("SELECT nom,prenom FROM users WHERE id = ?");
 
-            $reqRep = $bd->prepare("SELECT reponse,date_reponse,id_user FROM answers WHERE id_question = ? ");
+            $reqRep = $bd->prepare("SELECT reponse,date_reponse,id_user FROM answers WHERE id_question = ? AND is_delete_rep = 0");
             $reqRep->execute(array($question));
         ?>
-        <div class="rep">
-            <center>
-                <?php foreach($reqQues as $ques){?>
-                    <p class="p ques-forum">    
-                        <?php echo $ques['question'];?>
-                    </p>
-                <?php }?>
-                <?php foreach($reqRep as $rep){?>
-                    <?php $req->execute(array($rep['id_user'])); ?>
-                    <p class="p rep-forum">  
-                        <?php 
-                            if(!empty($reqRep))
-                                echo $rep['reponse']."<br>"."&nbsp &nbsp"; 
-                        ?>
-                        <?php foreach($req as $r){?>
-                            <span class="span"><?php echo "Par ".$r['prenom']." ".$r['nom']; ?></span>
-                            <span class="temps span"><?php echo "Le ".$rep['date_reponse']; ?></span>
-                        <?php } ?>
-                    </p>                
-                <?php }?>
-            </center>
+        <div class="rep">            
+            <?php foreach($reqQues as $ques){?>
+                <p class="p ques-forum">    
+                    <?php echo $ques['question'];?>
+                </p>
+            <?php }?>
+            <?php foreach($reqRep as $rep){?>
+                <?php $req->execute(array($rep['id_user'])); ?>
+                <p class="p rep-forum">  
+                    <?php 
+                        if(!empty($reqRep))
+                            echo $rep['reponse']."<br>"."&nbsp &nbsp"; 
+                    ?>
+                    <?php foreach($req as $r){?>
+                        <span class="span"><?php echo "Par ".$r['prenom']." ".$r['nom']; ?></span>
+                        <span class="temps span"><?php echo "Le ".$rep['date_reponse']; ?></span>
+                    <?php } ?>
+                </p>                
+            <?php }?>           
         </div>
         <div class="question" id="<?php echo $question;?>">
             <form action="" method="post">
                 <!-- <input type="number" name="newLien" id="" placeholder="Numero de la question..."> -->
 		        <textarea name="reponse" id="reponse" cols="50" rows="10" class=""></textarea>
-		        <button type="submit" class="btn btn-primary">Repondre</button>
+		        <button type="submit" class="btn btn-primary" name="rep">Repondre</button>
 	        </form>
         </div>
     </div>

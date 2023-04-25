@@ -33,7 +33,7 @@
     <div class="container">
         <table class="table table-dark">
             <thead>
-                <th>Fichiers</th>
+                <th>Fichiers (cliqué pour lire)</th>
                 <th colspan="2">Actions</th>
             </thead>
             <tbody>

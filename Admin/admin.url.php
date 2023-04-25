@@ -1,16 +1,17 @@
 <?php
+    session_start();
     include("../Private/conDB.php");
 
     $requete1 = $bd->query("SELECT * FROM users");
     $req_users = $bd->query("SELECT COUNT(*) AS nombre FROM users");
 
-    $requete2 = $bd->query("SELECT * FROM questions JOIN users 
-            WHERE questions.id_user = users.id");
-    $req_question = $bd->query("SELECT COUNT(*) AS nombre FROM questions");
+    // $requete2 = $bd->query("SELECT * FROM questions WHERE is_delete = 0");
+    $requete2 = $bd->query("SELECT * FROM questions WHERE is_delete_ques = 0");
+    $req_question = $bd->query("SELECT COUNT(*) AS nombre FROM questions WHERE is_delete_ques = 0");
 
-    $requete3 = $bd->query("SELECT * FROM answers JOIN questions JOIN users 
-            WHERE answers.id_question = questions.id AND answers.id_user = users.id");
-    $req_reponse = $bd->query("SELECT COUNT(*) AS nombre FROM answers");
+    // $requete3 = $bd->query("SELECT * FROM answers WHERE is_delete = 0");
+    $requete3 = $bd->query("SELECT * FROM answers WHERE is_delete_rep = 0");
+    $req_reponse = $bd->query("SELECT COUNT(*) AS nombre FROM answers WHERE is_delete_rep = 0");
 
 ?>
 <!DOCTYPE html>
@@ -71,12 +72,13 @@
                 <h3 id="users" class="h3-admin">TABLE UTILISATEURS</h3>
                 <table class="table">
                     <thead class="table-dark">
-                        <td>Nom</td>
-                        <td>Prenom</td>
-                        <td>Email</td>
-                        <td>Mot de pass</td>
-                        <td>Date Inscription</td>
-                        <td colspan="2">Action</td>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Email</th>
+                        <th>Mot de pass</th>
+                        <th>Date Inscription</th>
+                        <th>Etat</th>
+                        <th colspan="2">Action</th>
                     </thead>
                     <tbody>
                         <?php foreach($requete1 as $rq1){?>
@@ -86,8 +88,15 @@
                                 <td><?php echo $rq1["email"] ?></td>
                                 <td><?php echo $rq1["mot_de_pass"] ?></td>
                                 <td><?php echo $rq1["date_inscription"] ?></td>
-                                <td><a href="update.php?id=<?php echo $rq1['id']?>&name=user" class="btn btn-info">Modifier</a></td>
-                                <td><a href="delete.php?id=<?php echo $rq1['id']?>&name=user" class="btn btn-danger">Supprimer</a></td>                            
+                                <td><?php echo $rq1["is_active"] ?></td>
+                                <td><a href="update.php?idU=<?php echo $rq1['id']?>&name=user" class="btn btn-info">Modifier</a></td>
+                                <!-- <td><a href="delete.php?idU=<?php echo $rq1['id']?>&name=user" class="btn btn-danger">Actif/Non</a></td> -->
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        <a href="delete.php?idU=<?php echo $rq1['id']?>&name=user&etat=actif"><button type="button" class="btn btn-success" name="actif">Actif</button></a>
+                                        <a href="delete.php?idU=<?php echo $rq1['id']?>&name=user&etat=delete"><button type="button" class="btn btn-danger" name="delete">Delete</button></a>
+                                    </div>
+                                </td>                                                                                   
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -100,25 +109,30 @@
                             <td>Question</td>
                             <td>Prenom</td>
                             <td>Nom</td>
-                            <td>Date demande</td>                        
+                            <td>Date demande</td>
+                            <td>Nb reponse</td>                      
                             <td colspan="2">Action</td>
                         </thead>
                         <tbody>
                             <?php foreach($requete2 as $rq2){?>
-                                <tr>                               
-                                    <td><?php echo $rq2["question"] ?></td>
-                                    <td><?php echo $rq2["prenom"] ?></td>
-                                    <td><?php echo $rq2["nom"] ?></td>
-                                    <td><?php echo $rq2["date_demande"] ?></td>                                
-                                    <td><a href="update.php?id=<?php echo $rq2['id']?>&name=question" class="btn btn-info">Modifier</a></td>
-                                    <td><a href="delete.php?id=<?php echo $rq2['id']?>&name=question" class="btn btn-danger">Supprimer</a></td>
-                                    <!-- <td>
-                                        <form action="delete.php" method="post">
-                                            <input type="submit" name="delete" value="Delete">
-                                            <input type="hidden" name="id_com" value="<?php echo $rq2["id"];?>">
-                                        </form>                                
-                                    </td> -->
-                                </tr>
+                                <?php 
+                                    $id_user = $rq2['id_user'];
+                                    $requete = $bd->query("SELECT nom,prenom FROM users WHERE id = $id_user"); ?>                                                                
+                                    <tr>                               
+                                        <td><?php echo $rq2["question"]; ?></td>
+                                        <td><?php foreach($requete as $r){ echo $r["prenom"]; ?></td>
+                                        <td><?php echo $r["nom"]; }?></td>
+                                        <td><?php echo $rq2["date_demande"]; ?></td>
+                                        <td>Just After</td>                              
+                                        <td><a href="update.php?idQ=<?php echo $rq2['id']?>&name=question" class="btn btn-info">Modifier</a></td>
+                                        <td><a href="delete.php?idQ=<?php echo $rq2['id']?>&name=question" class="btn btn-danger">Supprimer</a></td>
+                                        <!-- <td>
+                                            <form action="delete.php" method="post">
+                                                <input type="submit" name="delete" value="Delete">
+                                                <input type="hidden" name="id_com" value="<?php echo $rq2["id"];?>">
+                                            </form>                                
+                                        </td> -->
+                                    </tr>                                                                    
                             <?php } ?>
                         </tbody>
                     </table>
@@ -127,21 +141,24 @@
                 <h3 id="reponses" class="h3-admin">TABLE REPONSES</h3>
                 <table class="table">            
                         <thead class="table-dark">
-                            <td>Question</td>
+                            <!-- <td>Question</td> -->
                             <td>Reponses</td>
                             <td>Prenom</td>
-                            <!-- <td>Nom</td> -->
+                            <td>Nom</td>
                             <td>Date reponse</td>                        
                             <td colspan="2">Action</td>
                         </thead>
                         <tbody>
                             <?php foreach($requete3 as $rq3){?>
+                                <?php 
+                                    $id_user_rep = $rq3['id_user'];
+                                    $requete_rep = $bd->query("SELECT nom,prenom FROM users WHERE id = $id_user_rep"); ?>
                                 <tr>
-                                    <td><?php echo $rq3["question"] ?></td>
-                                    <td><?php echo $rq3["reponse"] ?></td>
-                                    <td><?php echo $rq3["prenom"] ?></td>
-                                    <!-- <td><?php echo $rq3["nom"] ?></td> -->
-                                    <td><?php echo $rq3["date_reponse"] ?></td>                                
+                                    <!-- <td><?php echo $rq3["question"]; ?></td> -->
+                                    <td><?php echo $rq3["reponse"]; ?></td>
+                                    <td><?php foreach($requete_rep as $req_rep){ echo $req_rep["prenom"]; ?></td>
+                                    <td><?php echo $req_rep["nom"];} ?></td>
+                                    <td><?php echo $rq3["date_reponse"]; ?></td>                                
                                     <td><a href="update.php?idR=<?php echo $rq3['id']?>&name=reponse" class="btn btn-info">Modifier</a></td>
                                     <td><a href="delete.php?idR=<?php echo $rq3['id']?>&name=reponse" class="btn btn-danger">Supprimer</a></td>
                                     <!-- <td>

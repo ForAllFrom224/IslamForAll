@@ -5,8 +5,8 @@
 
     $id = $_SESSION['idUser'];
 
-    $requete1 = $bd->query("SELECT id_question,reponse FROM answers WHERE id_user = $id");
-    $requete2 = $bd->prepare("SELECT question,date_demande,id_user FROM questions WHERE id = ?");
+    $requete1 = $bd->query("SELECT id_question,reponse FROM answers WHERE id_user = $id AND is_delete_rep = 0");
+    $requete2 = $bd->prepare("SELECT question,date_demande,id_user FROM questions WHERE id = ? AND is_delete_ques = 0");
     $requete3 = $bd->prepare("SELECT nom,prenom FROM users WHERE id = ?");    
 ?>
 <!DOCTYPE html>

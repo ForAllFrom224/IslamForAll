@@ -4,8 +4,8 @@
     $id = $_SESSION['idUser'];
     include("../Private/conDB.php");
 
-    $requete = $bd->query("SELECT id,question,date_demande FROM questions WHERE id_user = $id");
-    $reponse = $bd->prepare("SELECT reponse,date_reponse,id_user FROM answers WHERE id_question = ?");
+    $requete = $bd->query("SELECT id,question,date_demande FROM questions WHERE id_user = $id AND is_delete_ques = 0");
+    $reponse = $bd->prepare("SELECT reponse,date_reponse,id_user FROM answers WHERE id_question = ? AND is_delete_rep = 0");
     $requete_nom = $bd->prepare("SELECT nom,prenom FROM users WHERE id = ?");
 
 ?>

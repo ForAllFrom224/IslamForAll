@@ -9,14 +9,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?">
-    <link rel="stylesheet" href="../css/users.css?sskd">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?">    
     <title>Document</title>
 </head>
 <body>
-    <h1>la lecture est la nourriture de l'esprit, lisez donc... bonne lecture</h1>
+    <h1>La lecture est la nourriture de l'esprit.  <em class='orange'>bonne lecture</em></h1>
 
-    <section>
+    <section class="section-livre">
         <center>
             <table class="table table-striped table">
                 <thead class="table-dark">                

@@ -195,31 +195,6 @@ div.forum1{
     color: var(--blanc);
 
 } 
-p.alerte{
-    border: 2px solid var(--orange);
-    border-radius: 10px;
-    font-size: 1.1em;
-    text-align: center;
-    text-transform: capitalize;
-    font-style: oblique;
-    animation: 3s linear infinite alternate alerte;
-}
-@keyframes alerte {
-    from {
-      margin-left:10%;
-      width:70%;
-      color: var(--my-bleue);
-      
-    }
-    to {
-      margin-left:30%;
-      width:70%;
-      color: var(--rouge);
-    }
-}
-.alerte{
-    border: 2px solid var(--orange);
-}
 .islam{
     color: var(--orange);
     font-size: 15px;

@@ -11,13 +11,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?">
-	<link rel="stylesheet" href="../css/users.css?sjs">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?">	
     <title>Document</title>
 </head>
 <body>    
-    <h1 class="forum2">Forum</h1>
-    <a href="#pose-question" style="text-decoration: none;"><p class="indication">poser une question</p></a>
+    <h1 class="forum2 orange">Forum</h1>
+    <a href="#pose-question" class='info'><p class="indication orange">poser une question</p></a>
     <?php
         if(isset($_POST['valider'])){
             if(isset($_POST['question']) && !empty($_POST['question'])){       
@@ -58,28 +57,24 @@
         // header("Location: forum2.php");
     ?>
     <!-- donner la posibilité à chaque personne de pouvoir supprimer ces commentaires -->
-	<div class="container text-center">
-		<div class="row">
+	<section class="container text-center">		
+        <div class="row">
 			<?php for($i = 0; $i < count($rq); $i++){?>
                 <?php $req->execute(array($rq[$i]['id_user'])); ?>
-                <div class='col-12 question-forum2'>  
-                    <form action="intermediaire.php" method="get">                                                                                                 
+                <div class='col-12 question-forum2'>                                                                                                                      
                         <!-- <input type="hidden" name="lien" value="<?php echo $count; ?>">                                     -->
-                        <?php if($rq[$i]['is_delete_ques'] == 0){ ?>
-                            <button type="submit" class="buttonTest">
-                                <a class="aquestion" href="intermediaire.php?lien=<?php $count; echo $rq[$i]["id"]; ?>" title="clique pour repondre"><?php echo $rq[$i]['question'];?></a>
-                                <br>
-                                <?php if($rq[$i]['id_user'] == $id){ ?>
-                                    <a href="modifier.php" class="action_user">[ Modifier</a> &nbsp;&nbsp;-&nbsp;&nbsp;<a href="delete.php?idQuestion=<?php echo $rq[$i]['id'];?>" class="action_user">Supprimer ]</a><br>
-                                <?php } ?>
-                                <?php foreach($req as $r){ ?>
-                                    <span class='info'><?php echo "Publié le ".$rq[$i]['date_demande'];?></span>                            
-                                    <span class='info'><?php echo " par ".$r['prenom'];?></span>                                
-                                <?php } ?>                            
-                            </button>
-                        <?php } ?>                                                                                                                               
-                    </form>                            
-                    <?php $count++; ?>  					                                     
+                    <?php if($rq[$i]['is_delete_ques'] == 0){ ?>                        
+                        <p class='question-forum2'><?php echo $rq[$i]['question'];?></p>
+                        [ <a href="intermediaire.php?lien=<?php $count; echo $rq[$i]['id'];?>" class="action_user">Repondre</a>
+                        <?php if($rq[$i]['id_user'] == $id){ ?>
+                            <a href="modifier.php" class="action_user"> - Modifier</a> - <a href="delete.php?idQuestion=<?php echo $rq[$i]['id'];?>" class="action_user">- Supprimer</a>
+                        <?php } ?> ]<br>
+                        <?php foreach($req as $r){ ?>
+                            <span class='info info-question-forum2'><?php echo "Publié le ".$rq[$i]['date_demande'];?></span>                            
+                            <span class='info info-question-forum2'><?php echo " par ".$r['prenom'];?></span>                                
+                        <?php } ?>                                                    
+                    <?php } ?>                                                                                                                                                                              
+                    <?php $count++; ?>                               
                 </div>
             <?php } ?>                 									
 		</div>
@@ -93,13 +88,15 @@
                 }
             ?>
 		</div>
-  </div>  
-    <div class="pose-question" id="pose-question">
-        <!-- <span>POSER VOS QUESTIONS ICI : </span> -->
-        <form action="" method="post">
-            <textarea name="question" id="question" cols="50" rows="10" placeholder="Put your questions here..."></textarea><br>
-            <button type="submit" class="btn btn-primary" name="valider">Soumettre</button>
-        </form>
-    </div>    
+  </section>
+  <center>  
+        <div class="pose-question" id="pose-question">
+            <!-- <span>POSER VOS QUESTIONS ICI : </span> -->
+            <form action="" method="post">
+                <textarea name="question" id="question" cols="60" rows="10" placeholder="Put your questions here..."></textarea><br>
+                <button type="submit" class="btn btn-primary" name="valider">Soumettre</button>
+            </form>
+        </div>
+    </center>    
 </body>
 </html>

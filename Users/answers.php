@@ -14,28 +14,27 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/users.css?kssjshksko">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>my-answers</title>
 </head>
 <body>
     <center>
-        <div class="my-answers">
+        <section class="section-yourquestions">
             <?php foreach($requete1 as $req1){?>
                 <?php $requete2->execute(array($req1['id_question']));?>
                 <?php foreach($requete2 as $req2){?>
                     <?php $requete3->execute(array($req2['id_user'])); ?>
                     <?php foreach($requete3 as $req3){?>
-                    <div class="question-repondu">
+                    <div class="question">
                         <?php echo $req2['question']."<br>";  ?>
-                        <span><?php echo "&nbsp &nbsp publié par ".$req3['prenom']." ".$req3['nom']." Le ".$req2['date_demande'] ?></span>
-                    </div>
-                    <p>
-                        <?php echo $req1['reponse'] ?>
-                    </p>
+                        <span class="info-rep-yourquestions"><?php echo "&nbsp &nbsp publié par ".$req3['prenom']." ".$req3['nom']." Le ".$req2['date_demande'] ?></span>
+                        <p>
+                            <?php echo $req1['reponse'] ?>
+                        </p>
+                    </div>                    
 
             <?php } }}?>
-        </div>
+        </section>
     </center>
 
 </body>

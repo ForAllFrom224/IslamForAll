@@ -1,0 +1,295 @@
+/* definiton des couleurs */
+html{
+    --orange : orange;
+    --noire : black;
+    --blanc : whitesmoke;
+    --my-blue : dodgerblue;
+    --rouge : red;
+}
+
+/* css communs à toutes les pages du site */
+body{
+    background-color: var(--blanc);
+}
+a.a{
+    text-transform: capitalize; 
+    color: dodgerblue;
+    font-size: 1.2em;
+}
+a.orange, .orange{
+    color: orange;
+    text-transform: capitalize;
+}
+h2,h1{
+    text-align: center;
+}
+main{
+    width: 98%;
+    margin-left: 15px;
+   /* margin-right: 10px; */
+}
+
+
+/* css pour le fichier index (accueil du site) */
+div.image .masquer{
+    display: none;
+}
+section.conteneur img{
+    width: 80%;
+    height: 80vh;
+    /* margin-left: 10%; */
+}
+section.section{
+    border: 2px solid blue;
+    margin-top: 10px;
+}
+section.section img{
+    height: 200px;
+}
+.piliers{
+    text-align: left;
+    width: 74%;    
+    border: 1px solid red; 
+}
+section.section p.piliers-left{   
+    margin-left: 10px;    
+}
+section.section p.piliers-right{   
+    margin-left: 25%;    
+}
+
+/* css de la partie forum1 */
+div.question-forum1{
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+div.question-forum1 a{
+    color: var(--noire);
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+}
+span.info-question-forum1{
+    color: var(--my-blue);
+}
+
+a.info{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--orange);
+    text-decoration: none;
+}
+p.alerte{
+    border: 2px solid var(--orange);
+    border-radius: 10px;
+    font-size: 1.1em;
+    text-align: center;
+    text-transform: capitalize;
+    font-style: oblique;
+    animation: 3s linear infinite alternate alerte;
+}
+@keyframes alerte {
+    from {
+      margin-left:10%;
+      width:70%;
+      color: var(--my-bleue);
+      
+    }
+    to {
+      margin-left:30%;
+      width:70%;
+      color: var(--rouge);
+    }
+}
+.pagination{
+    width: 100%;
+    margin-top: 5px;
+    justify-content: center;
+}
+.pagination a{
+    text-decoration: none;
+    color: black;
+    width: 30px;
+    border-radius: 10px;
+}
+.pagination a:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+.pagination a.page_nonclique{
+    background-color: var(--noire);
+    color: var(--blanc);    
+}
+.pagination a.page_clique{
+    background-color: var(--orange);   
+}
+.pagination a.page_clique:hover{
+    color: black;
+}
+div.pose-question{
+    margin-top: 5px;
+}
+
+/* css pour la partie histoire islamique */
+h2 ~ .lien-histoire{
+    text-align: left;
+    text-decoration: none;    
+    text-transform: capitalize;
+}
+
+/* css pour les fichiers connexion et inscription*/
+div.conteneur-login{
+    width: 50%;
+    height: 60vh;
+    margin-top: 3%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+div.conteneur-login input{
+    margin-top: 10px;
+    padding-top: 5px;
+    height: 35px;
+}
+
+div.conteneur-connexion input{
+    margin-top: 50px;
+}
+
+/* css pour la partie livre */
+section.section-livre{
+    width: 80%;
+    margin-left: 10%; 
+}
+
+/* css pour la partie quizz */
+section.section-quizz{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+section.section-quizz div.quizz{
+    width: 320px;
+    /* padding-left: 10%; */
+    margin-left: 6%; 
+    margin-top: 10px;
+    height: 15vh;
+    border: 1px dashed black;
+    border-radius: 10px;
+    background-color: #111;
+}
+section.section-quizz div.quizz p{
+    text-align: center;
+    margin: 10% 10%;
+    color: orange;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+/* --------------------------- css pour la partie utilisateur ------------------------- */
+
+/* css commune des differents fichiers de cette partie */
+em{
+    text-transform: capitalize;
+
+}
+div.margin-left{
+    margin-left: 150px;
+}
+/* css bouton deconnexion */
+a.deconnexion{
+    margin-left: 200px;
+    border: 1px solid #111;
+    font-weight: bold;
+}
+a.deconnexion:hover{
+    color: white;
+    background-color: #111;
+}
+
+/* css de la partie forum 2 */
+div.question-forum2{
+    margin-top: 10px;
+    width: 65%;
+    margin-left: 18%;
+    border: 2px solid orange;
+}
+a.action_user{
+    color: var(--rouge);
+}
+p.question-forum2{
+    color: var(--noire);
+    font-weight: bold;
+    margin: 0px;
+}
+span.info-question-forum2{
+    color: var(--my-blue);
+}
+
+/* css pour la partie reponse du forum2 */
+section.section-reponse-forum2{
+    width: 70%;
+    overflow-y: scroll;
+    height: 80vh;
+    margin-left: 5%;
+    border: 1px solid black;
+}
+div.question-reponses{
+    width: 100%;
+}
+p.zone-question-rep{
+    color: var(--noire);
+    font-weight: bold;
+    text-align: center;
+}
+p.reponses-forum2{
+    text-align: left;
+}
+span.info-reponses{
+    text-align: left;
+    color: red;
+}
+button.bouton{
+    background-color: var(--my-blue);
+    font-weight: bold;
+    margin-left: 10%;
+}
+button.bouton:hover{
+    background-color: var(--my-blue);
+    cursor: grab;   
+}
+
+/* css pour la partie your questions */
+section.section-yourquestions{
+    border: 1px solid orange;
+    width: 60%;
+    height: 85vh;
+    overflow-y: scroll;
+}
+div.question{
+    border: 1px solid green;
+    font-weight: bold;
+    width: 90%;
+    margin: 5px 5px;
+    border-radius: 10px;
+}
+div.question span.info-question-yourquestions{
+    color: var(--rouge);
+}
+div.question p.debut-reponse{
+    margin: 0;
+    text-align: left;
+    color: var(--orange);
+}
+div.question p.reponses{    
+    margin: 0;
+    border: 2px dashed black;
+    margin-top: 5px;
+}
+
+div.question span.info-rep-yourquestions{
+    color: var(--orange);
+}

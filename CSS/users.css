@@ -132,9 +132,7 @@ textarea{
 .good{
     border: 2px solid green;
 }
-.alerte{
-    border: 2px solid orange;
-}
+
 /* .lienQuestion{
     color: dodgerblue;
     visibility: visible;

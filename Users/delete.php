@@ -6,5 +6,5 @@
     $requete = $bd->prepare("UPDATE questions SET is_delete_ques = 1 WHERE id = ?");
     $requete->execute(array($idQ));
 
-    header("Location: forum2.php");
+    header("Location: forum.islam.php");
 ?>

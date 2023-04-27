@@ -8,34 +8,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?jhds">
-    <link rel="stylesheet" href="../css/users.css?ss">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css?jhds">    
     <title>Document</title>
 </head>
-<body>
-    <!-- <header>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link home-page" href="../index.html">Home Page</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link home" href="my_livre.php">Lire un livre</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link home" href="forum2.php">My Forum</a>
-            </li> 
-            <li class="nav-item">
-                <a class="nav-link home active" aria-current="page" href="questions.php">My questions</a>
-            </li> 
-            <li class="nav-item">
-                <a class="nav-link home active" aria-current="page" href="answers.php">My Answers</a>
-            </li>                                  
-            <li class="nav-item">
-                <a class="nav-link deconnexion" href="../Users/deconnexion.php">Deconnexion</a>                
-            </li>
-        </ul> 
-        <hr>       
-	</header> -->
+<body>    
     <?php include("menu_user.html"); ?>
     <h1 class="welcome">BIENVENUE <span id="name_user"><?php echo $_SESSION['lastname']." ".$_SESSION['firstname']; ?></h1></span>
     <?php
